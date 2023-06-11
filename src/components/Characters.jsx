@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Characters({ id, name, occupation, weapon, handleDelete, handleEdit }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -39,6 +40,7 @@ export default function Characters({ id, name, occupation, weapon, handleDelete,
           <p>Weapon: {weapon}</p>
         </>
       )}
+      <Link to={`/characters/${id}`}>Ver detalle</Link>
       <button onClick={() => handleDelete(id)}>🗑</button>
       <button onClick={() => setIsEditing(!isEditing)}>✏️</button>
     </div>

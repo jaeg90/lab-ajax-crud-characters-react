@@ -4,8 +4,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import ErrorPage from "./pages/ErrorPage";
-// import MovieDetails from "./pages/MovieDetails";
-// import ResultsPage from "./pages/ResultsPage";
+import CharacterDetails from "./pages/CharacterDetails";
 
 function App() {
   const userInSession = { name: "Fulano" };
@@ -15,9 +14,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/movies/:id" element={<MovieDetails />} /> */}
+        <Route path="/characters/:id" element={<CharacterDetails />} />
         <Route path="/profile" element={<ProfilePage userInSession={userInSession} />} />
-        {/* <Route path="/search" element={<ResultsPage />} /> */}
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
